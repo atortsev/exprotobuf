@@ -13,7 +13,7 @@ defmodule GpbCompileHelper do
   end
 
   def compile_tmp_proto(msgs, options, module, func) do
-    defs = Protobuf.Parser.parse_string!("nofile", msgs, options)
+    defs = ExProtobuf.Parser.parse_string!("nofile", msgs, options)
 
     options = [:binary | options]
 
@@ -39,7 +39,7 @@ defmodule GpbCompileHelper do
   end
 
   def find_unused_module(n \\ 1) do
-    mod_name_candidate = :'protobuf_test_tmp_#{n}'
+    mod_name_candidate = :'ExProtobuf_test_tmp_#{n}'
     case :code.is_loaded(mod_name_candidate) do
       false -> mod_name_candidate
       {:file, '<nofile>'} -> find_unused_module(n + 1)

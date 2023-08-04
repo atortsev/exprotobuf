@@ -1,6 +1,6 @@
 syntax = "proto3";
 package Wrappers;
-import "Google.Protobuf";
+import "Google.ExProtobuf";
 
 message Msg {
 
@@ -15,15 +15,15 @@ message Msg {
   bytes bytes_scalar                               = 9;
   Os os_scalar                                     = 10;
 
-  Google.Protobuf.DoubleValue double_value         = 11;
-  Google.Protobuf.FloatValue float_value           = 12;
-  Google.Protobuf.Int64Value int64_value           = 13;
-  Google.Protobuf.UInt64Value uint64_value         = 14;
-  Google.Protobuf.Int32Value int32_value           = 15;
-  Google.Protobuf.UInt32Value uint32_value         = 16;
-  Google.Protobuf.BoolValue bool_value             = 17;
-  Google.Protobuf.StringValue string_value         = 18;
-  Google.Protobuf.BytesValue bytes_value           = 19;
+  Google.ExProtobuf.DoubleValue double_value         = 11;
+  Google.ExProtobuf.FloatValue float_value           = 12;
+  Google.ExProtobuf.Int64Value int64_value           = 13;
+  Google.ExProtobuf.UInt64Value uint64_value         = 14;
+  Google.ExProtobuf.Int32Value int32_value           = 15;
+  Google.ExProtobuf.UInt32Value uint32_value         = 16;
+  Google.ExProtobuf.BoolValue bool_value             = 17;
+  Google.ExProtobuf.StringValue string_value         = 18;
+  Google.ExProtobuf.BytesValue bytes_value           = 19;
   OsValue os_value                                 = 20;
 
   oneof oneof_payload {
@@ -31,8 +31,8 @@ message Msg {
     string string_oneof_scalar                     = 22;
     Os os_oneof_scalar                             = 23;
 
-    Google.Protobuf.UInt64Value uint64_oneof_value = 24;
-    Google.Protobuf.StringValue string_oneof_value = 25;
+    Google.ExProtobuf.UInt64Value uint64_oneof_value = 24;
+    Google.ExProtobuf.StringValue string_oneof_value = 25;
     OsValue os_oneof_value                         = 26;
   }
 

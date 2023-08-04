@@ -1,18 +1,18 @@
-defmodule Protobuf.Utils do
+defmodule ExProtobuf.Utils do
   @moduledoc false
-  alias Protobuf.OneOfField
-  alias Protobuf.Field
+  alias ExProtobuf.OneOfField
+  alias ExProtobuf.Field
 
   @standard_scalar_wrappers %{
-    "Google.Protobuf.DoubleValue" => true,
-    "Google.Protobuf.FloatValue" => true,
-    "Google.Protobuf.Int64Value" => true,
-    "Google.Protobuf.UInt64Value" => true,
-    "Google.Protobuf.Int32Value" => true,
-    "Google.Protobuf.UInt32Value" => true,
-    "Google.Protobuf.BoolValue" => true,
-    "Google.Protobuf.StringValue" => true,
-    "Google.Protobuf.BytesValue" => true
+    "Google.ExProtobuf.DoubleValue" => true,
+    "Google.ExProtobuf.FloatValue" => true,
+    "Google.ExProtobuf.Int64Value" => true,
+    "Google.ExProtobuf.UInt64Value" => true,
+    "Google.ExProtobuf.Int32Value" => true,
+    "Google.ExProtobuf.UInt32Value" => true,
+    "Google.ExProtobuf.BoolValue" => true,
+    "Google.ExProtobuf.StringValue" => true,
+    "Google.ExProtobuf.BytesValue" => true
   }
 
   defmacro is_scalar(v) do

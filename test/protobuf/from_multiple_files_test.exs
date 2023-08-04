@@ -1,9 +1,9 @@
-defmodule Protobuf.FromMultipleFiles.Test do
-  use Protobuf.Case
+defmodule ExProtobuf.FromMultipleFiles.Test do
+  use ExProtobuf.Case
 
   test "generates all messages nested under TopLevel" do
     defmodule TopLevel do
-      use Protobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
+      use ExProtobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
                            Path.expand("../proto/import.proto", __DIR__),
                            Path.expand("../proto/imported.proto", __DIR__)]
     end
@@ -15,7 +15,7 @@ defmodule Protobuf.FromMultipleFiles.Test do
 
   test "prefixs module names with the package names" do
     defmodule WithPackageNames do
-      use Protobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
+      use ExProtobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
                            Path.expand("../proto/import.proto", __DIR__),
                            Path.expand("../proto/imported.proto", __DIR__)],
                     use_package_names: true
@@ -26,9 +26,9 @@ defmodule Protobuf.FromMultipleFiles.Test do
     assert %{authorization: "please?"} = WithPackageNames.Chat.WebsocketServerContainer.new(authorization: "please?")
   end
 
-  test "can specify an arbitrary namespace for defining protobuf messages" do
+  test "can specify an arbitrary namespace for defining ExProtobuf messages" do
     defmodule UnusedNamespace do
-      use Protobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
+      use ExProtobuf, from: [Path.expand("../proto/basic.proto", __DIR__),
                            Path.expand("../proto/import.proto", __DIR__),
                            Path.expand("../proto/imported.proto", __DIR__)],
                     use_package_names: true,
